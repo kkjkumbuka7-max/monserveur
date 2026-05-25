@@ -1,3 +1,4 @@
+from flask import Flask
 from database import create_tables
 
 app = Flask(__name__)
