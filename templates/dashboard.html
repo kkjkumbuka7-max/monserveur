@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Suivi Paiements</title>
 </head>
 <body>
 
-<h1>Dashboard test</h1>
+<h2>📊 Suivi des paiements</h2>
+
+<form method="POST">
+    <input type="text" name="frais" placeholder="Frais">
+    <input type="text" name="periode" placeholder="Période">
+    <input type="text" name="section" placeholder="Section">
+    <input type="text" name="classe" placeholder="Classe">
+    <button type="submit">Filtrer</button>
+</form>
+
+<br>
+
+<table border="1">
+<tr>
+    <th>Nom</th>
+    <th>Frais</th>
+    <th>Période</th>
+    <th>Montant</th>
+    <th>Devise</th>
+    <th>Date</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{ row[6] }} {{ row[7] }} {{ row[8] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] }}</td>
+    <td>{{ row[4] }}</td>
+    <td>{{ row[5] }}</td>
+</tr>
+{% endfor %}
+
+</table>
 
 </body>
 </html>
